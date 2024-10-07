@@ -35,13 +35,13 @@ The purpose of this is to convert our previous Data Visualization lesson in [Goo
 # bar_chart()
 
 def scatter_price_vs_weight():
-  plt.subplots(figsize=(10, 6))
+  plt.figure(figsize=(10, 6))
   plt.scatter(df['Weight (kg)'], df['Price (Euro)'], color='blue', alpha=0.6, edgecolor='white',s=65)
   plt.title('Price Vs. Weight',fontsize=16, fontweight='bold')
   plt.xlabel('Weight (kg)')
   plt.ylabel('Price (Euro)')
   plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.9)
-  plt.show()
+  st.pyplot() 
 
 
 scatter_price_vs_weight()
@@ -60,7 +60,7 @@ def gpu_distribution():
   plt.pie(df['GPU_Company'].value_counts().values, labels=df['GPU_Company'].value_counts().index, autopct='%0.2f%%', startangle=45, colors=['#00C7FD', '#76b900', '#ED1C24', '#0091BD'] , explode=[0.05, 0.05, 0.05, 0.05], wedgeprops={'edgecolor':'black', 'linewidth' : 0.5, 'antialiased' : True}, shadow=True)
   plt.axis('equal')
   plt.title('GPU Distribution', fontsize=16, fontweight='bold')
-  plt.show()
+  st.pyplot() 
 
 
 gpu_distribution()
