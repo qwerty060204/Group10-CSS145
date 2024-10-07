@@ -1,15 +1,8 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import altair as alt
-from wordcloud import WordCloud
-from mpl_toolkits.mplot3d import Axes3D
-import squarify
-import networkx as nx
-import plotly.graph_objects as go
-from io import StringIO
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("laptop_price - dataset.csv")
 
@@ -41,14 +34,14 @@ The purpose of this is to convert our previous Data Visualization lesson in [Goo
 
 # bar_chart()
 
-def gpu_distribution():
+def scatter_price_vs_weight():
   plt.figure(figsize=(10, 9))
   plt.pie(df['GPU_Company'].value_counts().values, labels=df['GPU_Company'].value_counts().index, autopct='%0.2f%%', startangle=45, colors=['#00C7FD', '#76b900', '#ED1C24', '#0091BD'] , explode=[0.05, 0.05, 0.05, 0.05], wedgeprops={'edgecolor':'black', 'linewidth' : 0.5, 'antialiased' : True}, shadow=True)
   plt.axis('equal')
   plt.title('GPU Distribution', fontsize=16, fontweight='bold')
 
 
-gpu_distribution()
+scatter_price_vs_weight()
 st.header("Price Vs. Weight Scatter Plot")
 st.markdown("""    
   **Observations:**  
